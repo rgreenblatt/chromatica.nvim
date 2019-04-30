@@ -34,7 +34,7 @@ class CompileArgsDatabase(object):
 
         self.global_args = global_args
         self.compile_args = []
-        self.ft_compile_args = { "c" : [], "cpp" : [] , "objc" : [], "objcpp" : [] }
+        self.ft_compile_args = {"c": [], "cpp": [], "objc": [], "objcpp": [], "cuda": []}
 
         self.find_per_project_file()
 
@@ -133,8 +133,10 @@ class CompileArgsDatabase(object):
                         self.init_cdb("compile_commands.json")
                     elif key == "%c" or key == "%h":
                         self.ft_compile_args["c"].append(keys[-1])
+                        self.ft_compile_args["cuda"].append(keys[-1])
                     elif key == "%cpp" or key == "%hpp":
                         self.ft_compile_args["c"].append(keys[-1])
+                        self.ft_compile_args["cuda"].append(keys[-1])
                     elif key == "%objective-c":
                         self.ft_compile_args["objc"].append(keys[-1])
                     elif key == "%objective-cpp":

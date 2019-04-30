@@ -73,7 +73,7 @@ function! chromatica#init#_enable() abort
     call chromatica#handlers#_init()
     let s:is_enabled = 1
     if g:chromatica#highlight_feature_level > 0
-        if s:is_ft(['c', 'cpp'])
+        if s:is_ft(['c', 'cpp', 'cuda'])
             " load chromatica version of syntax for related filetype
             doautoall Syntax
         endif

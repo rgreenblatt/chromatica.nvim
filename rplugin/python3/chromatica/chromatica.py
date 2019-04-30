@@ -63,7 +63,7 @@ class Chromatica(logger.LoggingMixin):
 
     @classmethod
     def is_supported_filetype(self, filetype):
-        if len(filetype) > 0 and filetype.split(".")[0] in ["c", "cpp", "objc", "objcpp"]:
+        if len(filetype) > 0 and filetype.split(".")[0] in ["c", "cpp", "objc", "objcpp", "cuda"]:
             return True
         return False
 
